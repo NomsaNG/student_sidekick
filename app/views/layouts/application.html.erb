@@ -8,9 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/bd0b651bd2.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render 'layouts/sidebar' %>
+
+    <div class="main-content">
+      <%= yield %> <!-- This will render the main content of each page -->
   </body>
 </html>
