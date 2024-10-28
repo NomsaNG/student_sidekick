@@ -1,8 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
-// @import "profile";
+@import "profile";
 @import "sidebar";
-// @import "dashboard";
-// @import "plagiarism_checker";
+@import "dashboard";
+@import "plagiarism_checker";
 @import "document_summarizer";
-// @import "bibliography_writer";
+@import "bibliography_writer";
