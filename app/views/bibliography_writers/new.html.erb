@@ -1,0 +1,25 @@
+<%= form_with model: @bibliography_writer, local: true do |form| %>
+  <div>
+    <%= form.label :citation_style %>
+    <%= form.select :citation_style, options_for_select([['MLA', 'mla'], ['APA', 'apa'], ['Chicago', 'chicago']]), selected: @bibliography_writer.citation_style %>
+  </div>
+
+  <div>
+    <%= form.label :source %>
+    <%= form.text_field :source %>
+  </div>
+
+  <div>
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div>
+    <%= form.label :publication_date %>
+    <%= form.date_select :publication_date %>
+  </div>
+
+  <div>
+    <%= form.submit "Generate Citation" %>
+  </div>
+<% end %>
