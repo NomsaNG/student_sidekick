@@ -9,12 +9,12 @@ Rails.application.routes.draw do
 
     get 'dashboard', to: 'dashboard#index'
     get 'profile', to: 'profile#show'
-    get 'bibliography_writer', to: 'bibliography_writer#index'
     get 'plagiarism_checker', to: 'plagiarism_checker#index'
     get 'document_summarizer', to: 'document_summarizer#index'
 
-    post 'document_summarizer/summarize', to: 'document_summarizer#summarize'
-    resources :document_summarizer, only: [:index, :create]
+    resources :bibliography_writers, only: [:new, :create, :show, :index]
+
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
