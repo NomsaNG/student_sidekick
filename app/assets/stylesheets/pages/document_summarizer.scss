@@ -64,3 +64,47 @@ button.btn:hover {
   background-color: #138496;
 }
 
+// Output
+
+.document-summary {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.document-summary h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.document-summary ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.document-summary li {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.document-summary .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.document-summary .btn:hover {
+  background-color: #0056b3;
+}

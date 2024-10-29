@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'document_summarizer/index'
   # get 'plagiarism_checker/index'
   # get 'bibliography_writer/index'

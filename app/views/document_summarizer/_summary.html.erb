@@ -1,5 +1,9 @@
-<div id="summary_container">
-  <h2>Summary</h2>
-  <p><%= summary %></p>
-  <a href="#" onclick="document.getElementById('summary_container').innerHTML=''; return false;">Clear Summary</a>
+<div class="document-summary">
+  <h2>Document Summary</h2>
+  <ul>
+    <% @summary.split('. ').each do |sentence| %>
+      <li><%= sentence %>.</li>
+    <% end %>
+  </ul>
+  <%= link_to 'Summarize another document', document_summarizer_path, class: 'btn' %>
 </div>
