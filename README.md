@@ -38,6 +38,7 @@ git clone https://github.com/NomsaNG/student_sidekick
 4. **Set up the database:**
 ```bash
   rails db:migrate
+  rails db:seeds
 ```
 5. **Start the Rails server:**
 ```bash
