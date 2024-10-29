@@ -23,5 +23,26 @@ Make sure you have the following installed:
 To get a local copy of the project up and running, follow these simple steps:
 
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/NomsaNG/student_sidekick
+```bash
+git clone https://github.com/NomsaNG/student_sidekick
+```
+
+2. **Navigate to the project directory:**
+```bash
+  cd student_sidekick
+```
+3. **Install dependencies:**
+```bash
+  bundle install
+```
+4. **Set up the database:**
+```bash
+  rails db:migrate
+```
+5. **Start the Rails server:**
+```bash
+  rails server
+```
+
+## Acknowledgements
+Thank you to everyone who contributed to the development of Student Sidekick. Your support is invaluable!
