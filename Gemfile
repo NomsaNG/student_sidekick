@@ -31,6 +31,7 @@ gem 'summarize'
 
 gem 'pdf-reader' # For PDF text extraction
 gem 'docx'       # For DOCX text extraction
+gem 'combine_pdf'
 
 
 

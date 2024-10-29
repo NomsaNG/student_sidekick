@@ -13,8 +13,7 @@ Rails.application.routes.draw do
     get 'document_summarizer', to: 'document_summarizer#index'
 
     resources :bibliography_writers, only: [:new, :create, :show, :index]
-
-
+    resources :document_summarizer, only: [:index, :create]
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,24 +1,20 @@
+require 'pdf-reader'
+require 'combine_pdf'
 class DocumentSummarizerController < ApplicationController
   def index
     @summary = nil
   end
 
   def create
-    document_text = params[:document_text]
     uploaded_file = params[:document]
 
-    if document_text.blank? && uploaded_file.blank?
-      flash.now[:alert] = "Please enter text or upload a document to summarize."
-      return render :index
+    begin
+      reader = PDF::Reader.new(uploaded_file.tempfile)
+      text = reader.pages.map(&:text).join("\n")
+      @summary = summarize_text(text)
+    rescue PDF::Reader::MalformedPDFError => e
+      @summary = "Error reading PDF: #{e.message}"
     end
-
-    # Extract text from uploaded file if it exists
-    if uploaded_file
-      document_text = extract_text_from_file(uploaded_file)
-    end
-
-    # Assuming you have a method to summarize the text
-    @summary = document_text.summarize(ratio: 30)
 
     respond_to do |format|
       format.turbo_stream do
@@ -27,6 +23,7 @@ class DocumentSummarizerController < ApplicationController
       format.html { render :summary }
     end
   end
+
 
 
   private
@@ -48,20 +45,34 @@ class DocumentSummarizerController < ApplicationController
 
   # Method to extract text from PDF files
   def extract_text_from_pdf(uploaded_file)
-    # Ensure we're using the tempfile attribute
-    reader = PDF::Reader.new(uploaded_file.tempfile) # Accessing tempfile directly
-    reader.pages.map(&:text).join("\n")
+    begin
+      # Ensure we're using the tempfile attribute
+      uploaded_file.open do |file|
+        reader = PDF::Reader.new(file) # Accessing tempfile directly
+        reader.pages.map(&:text).join("\n")
+      end
+    rescue PDF::Reader::MalformedPDFError => e
+      flash.now[:alert] = "Error reading the PDF file: #{e.message}"
+      return nil
+    end
   end
 
   # Method to extract text from DOCX files
   def extract_text_from_docx(uploaded_file)
-    # Use a gem like 'docx' to extract text
-    document = Docx::Document.open(uploaded_file.tempfile.path) # Ensure tempfile is used
-    document.paragraphs.map(&:text).join("\n")
+    begin
+      document = Docx::Document.open(uploaded_file.tempfile.path) # Ensure tempfile is used
+      document.paragraphs.map(&:text).join("\n")
+    rescue => e
+      flash.now[:alert] = "Error reading the DOCX file: #{e.message}"
+      return nil
+    end
   end
 
   # Example summarization method
   def summarize_text(document_text)
+    # Ensure document_text is a string and not nil before summarizing
+    return nil if document_text.nil? || !document_text.is_a?(String) || document_text.empty?
+
     # Implement your summarization logic here
     # This is just a placeholder; adjust as needed
     document_text.summarize(ratio: 30)
