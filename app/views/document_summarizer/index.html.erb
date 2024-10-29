@@ -1,21 +1,24 @@
-
 <div class="summarizer-container">
   <header>
     <h1>Document Summarizer</h1>
     <p>Summarize lengthy documents with a click.</p>
   </header>
 
-  <form class="summarizer-form">
+  <%= form_with url: document_summarizer_path, method: :post, local: true, html: { class: "summarizer-form", enctype: "multipart/form-data" } do %>
     <div class="form-group">
       <label for="document">Upload Document:</label>
-      <input type="file" id="document" name="document">
+      <%= file_field_tag :document %>
     </div>
 
     <div class="form-group">
       <label for="document-text">Or Paste Your Text:</label>
-      <textarea id="document-text" name="document_text" placeholder="Paste your text here"></textarea>
+      <%= text_area_tag :document_text, nil, placeholder: "Paste your text here" %>
     </div>
 
-    <button type="submit" class="btn">Summarize</button>
-  </form>
+    <%= submit_tag "Summarize", class: "btn" %>
+  <% end %>
+</div>
+
+<div id="summary_container">
+  <!-- The summary will be rendered here -->
 </div>

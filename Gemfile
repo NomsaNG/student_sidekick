@@ -26,6 +26,15 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+#summarize gem
+gem 'summarize'
+
+gem 'pdf-reader' # For PDF text extraction
+gem 'docx'       # For DOCX text extraction
+
+
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
