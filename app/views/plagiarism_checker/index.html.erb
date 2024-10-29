@@ -15,6 +15,86 @@
       <textarea id="document-text" name="document_text" placeholder="Paste your text here"></textarea>
     </div>
 
-    <button type="submit" class="btn">Check for Plagiarism</button>
+    <%= link_to 'Plagiarism Checker', 'http://localhost:8501', class: 'btn btn-primary' %>
+
   </form>
 </div>
+
+
+<!--  <header>
+    <h1>Plagiarism Checker</h1>
+    <p>Check your document for plagiarism before submission.</p>
+  </header>
+
+  <form class="plagiarism-form">
+    <div class="form-group">
+      <label for="document">Upload Document:</label>
+      <input type="file" id="document" name="document">
+    </div>
+
+    <div class="form-group">
+      <label for="document-text">Or Paste Your Text:</label>
+      <textarea id="document-text" name="document_text" placeholder="Paste your text here"></textarea>
+    </div>
+
+    <button type="submit" class="btn">Check for Plagiarism</button>
+  </form>
+</div>-->
+
+
+
+
+<!---->
+<%#= form_with url: check_plagiarism_checker_index_path, method: :post, local: true do |form| %>
+  <%#= form.text_area :text, placeholder: "Enter text to check for plagiarism" %>
+  <%#= form.submit "Check Plagiarism" %>
+<%# end %>
+<!---->
+<%# if @results.any? %>
+<!--  <table>
+    <thead>
+      <tr>
+        <th>Sentence</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%# @results.each do |result| %>-->
+<!--        <tr>
+          <td><%#= result['Sentence'] %></td>
+          <td><a href="<%#= result['URL'] %>"><%= result['URL'] %></a></td>
+        </tr>
+      <%# end %>-->
+<!--    </tbody>
+  </table>
+<%# else %>-->
+<!--  <p>No results found. Please try a different text.</p>-->
+<%# end %>
+<!--
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#plagiarism-check-form').submit(function(event) {
+      event.preventDefault(); // Prevent the form from submitting the traditional way
+
+      const text = $('#text-input').val();
+      const urls = []; // Collect URLs if needed
+
+      $.ajax({
+        type: 'POST',
+        url: '<%#= plagiarism_checker_check_path %>', // Use Rails URL helper
+        data: { text: text, urls: urls },
+        dataType: 'json',
+        success: function(response) {
+          // Process response
+        },
+        error: function(xhr, status, error) {
+          console.error('Error occurred:', error);
+        }
+      });
+
+    });
+  });
+</script>
+-->
