@@ -1,34 +1,25 @@
- <div class="dashboard-container">
-    <header>
-      <h1>Welcome to Your Dashboard</h1>
-      <p>Manage your research and study tools here.</p>
-    </header>
+<body>
+  <div class="dashboard-container">
+    <div class="title">Dashboard</div>
 
-    <div class="dashboard-grid">
-      <div class="card">
-        <h2>Bibliography Writer</h2>
-        <p>Create and manage citations for your research papers.</p>
-        <a href="/bibliography_writer" class="btn">Go to Bibliography Writer</a>
+    <!-- Top Blocks for Credits and Total Services -->
+    <div class="top-blocks">
+      <div class="block">
+        <h3>Credits</h3>
+        <p><%= @student_credits %></p>
       </div>
-
-      <div class="card">
-        <h2>Plagiarism Checker</h2>
-        <p>Check your documents for plagiarism before submission.</p>
-        <a href="/plagiarism_checker" class="btn">Go to Plagiarism Checker</a>
+      <div class="block">
+        <h3>Total Services</h3>
+        <p><%= @total_services %></p>
       </div>
+    </div>
 
-      <div class="card">
-        <h2>Document Summarizer</h2>
-        <p>Summarize lengthy documents with a click.</p>
-        <a href="/document_summarizer" class="btn">Go to Document Summarizer</a>
+    <!-- Main Block with Student Activity -->
+    <div class="main-block">
+      <div class="activity-section">
+        <h3>Recent Activity</h3>
+        <p><%= @student_activity %></p>
       </div>
-
-      <div class="card">
-        <h2>Profile</h2>
-        <p>View and edit your personal profile details.</p>
-        <a href="/profile" class="btn">Go to Profile</a>
-      </div>
-
-      <!-- Add more cards for additional features -->
     </div>
   </div>
+</body>

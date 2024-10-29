@@ -1,4 +1,3 @@
-// Specific CSS for your home-page
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,11 +36,24 @@ body {
 .sidebar a:hover {
   background-color: rgb(5, 229, 254);
 }
-// .sidebar a.active {
-//   background-color: #4996e9;
-//   color: black;
-// }
+
+.sidebar a i {
+  margin-right: 10px;
+}
+
 .main-content {
   flex: 1;
   padding: 20px;
+}
+
+
+// logo
+
+
+
+.sidebar-logo {
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 8px;
 }
