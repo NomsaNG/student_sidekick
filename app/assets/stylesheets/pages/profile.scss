@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+  background-color: #693535;
   color: #333;
 }
 
@@ -14,7 +14,7 @@ body {
 .profile-container {
   max-width: 800px;
   margin: 50px auto;
-  background-color: #fff;
+  background-color: #c067d7;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -75,7 +75,7 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #7d1010;
   border-radius: 5px;
 }
 
@@ -96,4 +96,59 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+// body {
+//   background: #67B26F;  /* fallback for old browsers */
+//   background: whitesmoke;  /* Chrome 10-25, Safari 5.1-6 */
+//   background: linear-gradient(to right, #999237, #ba0796); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+//   padding: 0;
+//   margin: 0;
+//   font-family: 'Lato', sans-serif;
+//   color: #000;
+// }
+
+.student-profile .card {
+  background-color: #00b4d8;
+  border-radius: 10px;
+}
+.profile_details{
+  background: linear-gradient(135deg, #ff6b6b, #f37f7f);
+  color: white;
+
+
+}
+.profile_pic{
+  background-color: #1ECFAC;
+  color: white;
+}
+.profile_table{
+  background-color: #6770d7;
+  color: white;
+
+}
+.student-profile .card .card-header .profile_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+}
+
+.student-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.student-profile .card p {
+  font-size: 16px;
+  color: #000;
+}
+
+.student-profile .table th,
+.student-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000;
 }
