@@ -27,7 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 #summarize gem
-#em 'summarize'
+gem 'summarize'
 
 gem 'pdf-reader' # For PDF text extraction
 gem 'docx'       # For DOCX text extraction
@@ -37,6 +37,8 @@ gem 'combine_pdf'
 gem 'devise'
 
 gem 'plagiarism-checker'
+
+
 
 
 # Use Redis adapter to run Action Cable in production

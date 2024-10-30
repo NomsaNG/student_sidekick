@@ -1,5 +1,7 @@
 require 'pdf-reader'
 require 'combine_pdf'
+require 'docx' # Ensure you require the docx gem if you haven't already
+
 class DocumentSummarizerController < ApplicationController
   def index
     @summary = nil
@@ -24,8 +26,6 @@ class DocumentSummarizerController < ApplicationController
     end
   end
 
-
-
   private
 
   # Method to extract text from the uploaded file
@@ -46,7 +46,6 @@ class DocumentSummarizerController < ApplicationController
   # Method to extract text from PDF files
   def extract_text_from_pdf(uploaded_file)
     begin
-      # Ensure we're using the tempfile attribute
       uploaded_file.open do |file|
         reader = PDF::Reader.new(file) # Accessing tempfile directly
         reader.pages.map(&:text).join("\n")

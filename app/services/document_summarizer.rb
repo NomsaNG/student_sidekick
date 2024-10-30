@@ -11,5 +11,5 @@ class DocumentSummarizer
     options[:dictionary] = @dictionary if @dictionary
 
     @text.summarize(options)
-  end
+  end
 end
