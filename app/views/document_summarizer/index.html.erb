@@ -4,7 +4,7 @@
     <p>Summarize lengthy documents with a click.</p>
   </header>
 
-  <%= form_with url: document_summarizer_path, method: :post, local: true, html: { class: "summarizer-form", enctype: "multipart/form-data" } do %>
+  <%= form_with url: document_summarizer_index_path, method: :post, local: true, html: { class: "summarizer-form", enctype: "multipart/form-data" } do %>
     <div class="form-group">
       <label for="document">Upload Document:</label>
       <%= file_field_tag :document %>
