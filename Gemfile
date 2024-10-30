@@ -27,7 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 #summarize gem
-gem 'summarize'
+#em 'summarize'
 
 gem 'pdf-reader' # For PDF text extraction
 gem 'docx'       # For DOCX text extraction

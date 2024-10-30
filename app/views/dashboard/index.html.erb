@@ -5,35 +5,46 @@
       <span>Overview</span>
     </header>
 
-    <div class="cards">
-      <div class="card summary">
-        <h3>Document summarisation</h3>
-        <p><strong>20 files uploaded</strong></p>
-        <span>Increased by 5%</span>
-      </div>
-      <div class="card citations">
-        <h3>Icons</h3>
-        <p><strong>Generated 10 Citations</strong></p>
-        <span>Decreased by 10%</span>
-      </div>
-      <div class="card plagiarism">
-        <h3>Plagiarism detector</h3>
-        <p><strong>10% plagiarism detected</strong></p>
-        <span>Increased by 5%</span>
-      </div>
-    </div>
 
-    <div class="stats">
-      <div class="user-stats">
-        <h3>User Statistics</h3>
-        <div class="bar-chart">
-          <%= image_tag 'graph.jpg', alt: 'graph', class: 'graph' %>
+<div class="cards">
+  <%= link_to '/document_summarizer', class: 'card summary' do %>
+    <div>
+      <h3>Document summarisation</h3>
+      <p><strong>20 files uploaded</strong></p>
+      <span>Increased by 5%</span>
+    </div>
+  <% end %>
+
+  <%= link_to new_bibliography_writer_path, class: 'card citations' do %>
+    <div>
+      <h3>Icons</h3>
+      <p><strong>Generated 10 Citations</strong></p>
+      <span>Decreased by 10%</span>
+
+    </div>
+  <% end %>
+
+
+  <%= link_to 'http://localhost:8501', class: 'card plagiarism' do %>
+    <div>
+      <h3>Plagiarism detector</h3>
+      <p><strong>10% plagiarism detected</strong></p>
+      <span>Increased by 5%</span>
+    </div>
+  <% end %>
+</div>
+
+
+          <%= image_tag 'graph.jpeg', alt: 'graph', class: 'graph' %>
+
         </div>
       </div>
       <div class="research-progress">
         <h3>Research Progress</h3>
         <div class="pie-chart">
-          <%= image_tag 'pie-chart.jpg', alt: 'Piechart', class: 'piechart' %>
+
+          <%= image_tag 'pie-chart.jpeg', alt: 'Piechart', class: 'piechart' %>
+
         </div>
       </div>
     </div>
@@ -153,4 +164,15 @@
 }
 
 
+.cards .card {
+  text-decoration: none;
+  color: white;
+
+}
+
+.cards .card:hover {
+  background-color: #f0f0f0;
+}
+
 </style>
+
