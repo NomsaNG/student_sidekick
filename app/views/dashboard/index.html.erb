@@ -5,6 +5,7 @@
       <span>Overview</span>
     </header>
 
+
 <div class="cards">
   <%= link_to '/document_summarizer', class: 'card summary' do %>
     <div>
@@ -17,10 +18,12 @@
   <%= link_to new_bibliography_writer_path, class: 'card citations' do %>
     <div>
       <h3>Icons</h3>
-      <p><strong>Generated 10 Citations</strong></p>  
+      <p><strong>Generated 10 Citations</strong></p>
       <span>Decreased by 10%</span>
+
     </div>
   <% end %>
+
 
   <%= link_to 'http://localhost:8501', class: 'card plagiarism' do %>
     <div>
@@ -31,17 +34,17 @@
   <% end %>
 </div>
 
-    <div class="stats">
-      <div class="user-stats">
-        <h3>User Statistics</h3>
-        <div class="bar-chart">
-          <%= image_tag 'graph.jpg', alt: 'graph', class: 'graph' %>
+
+          <%= image_tag 'graph.jpeg', alt: 'graph', class: 'graph' %>
+
         </div>
       </div>
       <div class="research-progress">
         <h3>Research Progress</h3>
         <div class="pie-chart">
-          <%= image_tag 'pie-chart.jpg', alt: 'Piechart', class: 'piechart' %>
+
+          <%= image_tag 'pie-chart.jpeg', alt: 'Piechart', class: 'piechart' %>
+
         </div>
       </div>
     </div>
@@ -158,6 +161,16 @@
   justify-content: center;
   color: #bbb;
   font-size: 14px;
+}
+
+.cards .card {
+  text-decoration: none;
+  color: white;
+
+}
+
+.cards .card:hover {
+  background-color: #f0f0f0;
 }
 
 .cards .card {
